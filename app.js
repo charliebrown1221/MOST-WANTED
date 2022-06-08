@@ -86,6 +86,9 @@ function mainMenu(person, people) {
             app(people);
             break;
         case "quit":
+        case "test":
+            searchByWeight(people)
+           break;
             // Stop application execution
             return;
         default:
@@ -184,3 +187,69 @@ function chars(input) {
 
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
+/**
+ * 
+ * @param {Array} people 
+ * @returns{Array}
+ */
+function searchByTraits(people){
+    let userInput = prompt("please enter what spicific train you would like to shearch by:\ngender\ndob\nheight\nweight\neyeColor\noccupation")
+    let result;
+    switch (userInput) {
+        case "gender":
+            result = searchByGender(people)
+            
+            break;
+      
+        case "dob":
+            result = searchByDob(people)
+            break;
+    
+        case "height":
+            result = searchByHieght(people)
+            break;
+    
+        case "weight":
+            result = searchByWeight(people)
+            break;
+    
+        case "eyeColor":
+            result = searchByEyeColor(people)
+            break;
+    
+        case "occupation":
+            result = searchByOccupation(people)
+            break;
+        
+        default:
+             return searchByTraits(people)
+             //break;
+    }
+    // let result = people.filter(
+    //     function(person){
+    //         return true;//if (userInput === )
+    //     }
+
+    // );
+     return result;
+}
+/**
+ * this takes in a collection of people objects
+ * inside an srray and returns a collection of people objects
+ * that mach the requested gender by user
+ * @param {Array} people 
+ */
+function searchByGender(people){
+    let userInput= prompt (" please select the gender to search by :\n male\n female")
+    let result = people.filter(
+        function(person){
+            if( userInput=== person.gender){
+                return true;
+            }
+
+
+        }
+    );
+    //console.log(result)
+    return result;
+}
