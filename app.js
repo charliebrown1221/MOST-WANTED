@@ -295,3 +295,17 @@ function searchByWeight(people){
     //console.log(result)
     return result;
 }
+function searchByEyeColor(people){
+    let userInput= prompt (" please select the eye color to search by :\nblue\nbrown\ngreen\nhazel\nblack")
+    let result = people.filter(
+        function(person){
+            if( userInput=== person.eyeColor){
+                return true;
+            }
+
+
+        }
+    );
+    //console.log(result)
+    return result;
+}
