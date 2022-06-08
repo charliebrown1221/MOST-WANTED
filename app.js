@@ -253,3 +253,17 @@ function searchByGender(people){
     //console.log(result)
     return result;
 }
+function searchByDob(people){
+    let userInput= prompt (" please select the DOB to search by :\n2/02/1987\n2/19/1970\n2/19/1966\n12/11/1961\n10/7/1953\n7/26/1959\n3/13/1963\n8/5/1967\n11/4/1970\n12/18/1969\n2/8/1972\n5/6/1937\n4/20/1939\n10/28/1948\n12/18/1952\n4/10/1940\n3/16/1938\n9/6/1945\n5/9/1951\n4/1/1947\n1/18/1949")
+    let result = people.filter(
+        function(person){
+            if( userInput=== person.dob){
+                return true;
+            }
+
+
+        }
+    );
+    //console.log(result)
+    return result;
+}
