@@ -309,3 +309,17 @@ function searchByEyeColor(people){
     //console.log(result)
     return result;
 }
+function searchByOccupation(people){
+    let userInput= prompt (" please select ther occupation to search by :\ndoctor\nassistant\npolitician\nnurse\nlandscaper\nprogrammer\narchitect\nstudent")
+    let result = people.filter(
+        function(person){
+            if( userInput=== person.occupation){
+                return true;
+            }
+
+
+        }
+    );
+    //console.log(result)
+    return result;
+}
