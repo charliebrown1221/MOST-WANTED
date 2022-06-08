@@ -281,3 +281,17 @@ function searchByHeight(people){
     console.log(result)
     return result;
 }
+function searchByWeight(people){
+    let userInput= prompt (" please select the weight to search by :\n100\n110\n241\n187\n249\n184\n112\n235\n156\n179\n118\n205\n199\n137\n170\n256\n207\n115\n250\n162\n175")
+    let result = people.filter(
+        function(person){
+            if( Number(userInput) === person.weight){
+                return true;
+            }
+
+
+        }
+    );
+    //console.log(result)
+    return result;
+}
