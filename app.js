@@ -267,3 +267,17 @@ function searchByDob(people){
     //console.log(result)
     return result;
 }
+function searchByHeight(people){
+    let userInput= prompt (" please select the height to search by :\n67\n70\n63\n71\n74\n61\n62\n58\n66\n76\n69\n59\n66\n72\n65")
+    let result = people.filter(
+        function(person){
+            if( Number(userInput) === person.height){
+                return true;
+            }
+
+
+        }
+    );
+    console.log(result)
+    return result;
+}
