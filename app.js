@@ -87,7 +87,7 @@ function mainMenu(person, people) {
             break;
         case "quit":
         case "test":
-            searchByWeight(people)
+            findPersonFamily(person[0],people)
            break;
             // Stop application execution
             return;
@@ -141,17 +141,27 @@ function displayPeople(people) {
  * @param {Object} person       A singular object.
  */
 function displayPerson(person) {
-    let personInfo = `First Name: ${person.firstName}\n`;
-    personInfo += `Gender: ${person.lastName}\n`;
-    personInfo += `Dob: ${person.dob}\n`;
-    personInfo += `Height: ${person.height}\n`;
-    personInfo += `Weight: ${person.weight}\n`;
-    personInfo += `EyeColor: ${person.eyeColor}\n`;
-    personInfo += `Occupation: ${person.occupation}\n`;
-    
+    let personInfo = '';
+    for(let property in person){
+        if(property === "parents" || property === "currentSpouse"){
+            continue
+        }
+      personInfo += `${property} : ${person[property]}  \n`;
+     
+        }
+    // console.log(personInfo)
+     alert (personInfo);
+    // let personInfo = `First Name: ${person.firstName}\n`;
+    // personInfo += `Gender: ${person.lastName}\n`;
+    // personInfo += `Dob: ${person.dob}\n`;
+    // personInfo += `Height: ${person.height}\n`;
+    // personInfo += `Weight: ${person.weight}\n`;
+    // personInfo += `EyeColor: ${person.eyeColor}\n`;
+    // personInfo += `Occupation: ${person.occupation}\n`;
+    // return (personInfo);
 
     //! TODO #1a: finish getting the rest of the information to display //////////////////////////////////////////
-    alert(personInfo);
+    
 }
 // End of displayPerson()
 
@@ -213,7 +223,7 @@ function searchByTraits(people){
             break;
     
         case "height":
-            result = searchByHieght(people)
+            result = searchByHeight(people)
             break;
     
         case "weight":
@@ -329,3 +339,53 @@ function searchByOccupation(people){
     //console.log(result)
     return result;
 }
+
+// function searchByUserDefinedTraits(people){
+//    let userInputProp = prompt("")
+//    let userInputVal = promp("")
+//    let result =people.filter(
+//        function(person){
+//            if (person[userInputProp] === userInputVal || +userInputVal === person[userInputProp]){
+//                return true;
+//            }
+//        }
+//    );
+//    return result
+// }
+
+
+
+
+function findPersonFamily(person,people){
+    
+    let foundsiblings = people.filter(
+        function(el){
+            // siblings
+            // if(person.parents.includes(el.id)){
+                for ( person.parents in person.id )
+                return (person.id[person.parents]);
+            
+        } 
+        )
+        //   let foundspouse =people.filter(
+        //     // // spouse
+        //     function(el){
+        //     if(person.currentSpouse===el.id){
+        //         return true;
+        //     }
+        // }
+        //     )
+        //   let foundparents  = people.filter(
+        //       function(el){
+        //     // // parents
+        //     if(person.parents[0]===el.id && person.parents[1]===el.id){
+        //        return true;
+        //     }
+        // }
+        //     )
+        
+    
+
+    console.log(foundsiblings)
+}
+   
