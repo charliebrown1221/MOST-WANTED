@@ -87,7 +87,7 @@ function mainMenu(person, people) {
             break;
         case "quit":
         case "test":
-            findPersonFamily(person[0],people)
+            findPersonDescendants(person[0],people)
            break;
             // Stop application execution
             return;
@@ -388,17 +388,19 @@ function findPersonFamily(person,people){
     console.log("siblings:",foundsiblings,"spouse:",foundspouse,"parents:",foundparents)
 }
    
-function findPersonDescendants(person,people,finddescendant=[]){
-    finddescendant = people.filter(
+function findPersonDescendants(person,people,findDescendant=[]){
+    findDescendant = people.filter(
       function(el){
         if(person.parents[0]===el.id || person.parents[1]===el.id){
-            return
+            return true
         
       }})
        
      for(let i = 0; i<person.parents.length; i++){
             
         }
-        if(.lenght ====)
-    
+        if(person.parents.length === 0){
+        return findDescendant;
+        }
+    console.log(findDescendant)
 }
