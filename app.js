@@ -402,5 +402,5 @@ function findPersonDescendants(person,people,findDescendant=[]){
         if(person.parents.length === 0){
         return findDescendant;
         }
-    console.log(findDescendant,)
+    console.log(findDescendant)
 }
