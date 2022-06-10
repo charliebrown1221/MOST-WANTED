@@ -385,6 +385,20 @@ function findPersonFamily(person,people){
         
     ;
 
-    console.log(foundsiblings,foundspouse,foundparents)
+    console.log("siblings:",foundsiblings,"spouse:",foundspouse,"parents:",foundparents)
 }
    
+function findPersonDescendants(person,people,finddescendant=[]){
+    finddescendant = people.filter(
+      function(el){
+        if(person.parents[0]===el.id || person.parents[1]===el.id){
+            return
+        
+      }})
+       
+     for(let i = 0; i<person.parents.length; i++){
+            
+        }
+        if(.lenght ====)
+    
+}
