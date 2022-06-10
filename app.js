@@ -361,31 +361,30 @@ function findPersonFamily(person,people){
     let foundsiblings = people.filter(
         function(el){
             // siblings
-            // if(person.parents.includes(el.id)){
-                for ( person.parents in person.id )
-                return (person.id[person.parents]);
-            
+            if(person.parents[0]===el.parents[0]){
+                return true;
+            }
         } 
         )
-        //   let foundspouse =people.filter(
-        //     // // spouse
-        //     function(el){
-        //     if(person.currentSpouse===el.id){
-        //         return true;
-        //     }
-        // }
-        //     )
-        //   let foundparents  = people.filter(
-        //       function(el){
-        //     // // parents
-        //     if(person.parents[0]===el.id && person.parents[1]===el.id){
-        //        return true;
-        //     }
-        // }
-        //     )
+          let foundspouse =people.filter(
+            // // spouse
+            function(el){
+            if(person.currentSpouse===el.id){
+                return true;
+            }
+        }
+            )
+          let foundparents  = people.filter(
+              function(el){
+            // // parents
+            if(person.parents[0]===el.id || person.parents[1]===el.id){
+               return true;
+            }
+        }
+            )
         
-    
+    ;
 
-    console.log(foundsiblings)
+    console.log(foundsiblings,foundspouse,foundparents)
 }
    
